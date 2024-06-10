@@ -1,0 +1,29 @@
+:root
+{
+    $color-Blue: #0A327B;
+    $color-Red: #F65552;
+    $color-VeryDarkGreyBlue: #1C202B;
+    $color-DarkGreyBlue: #5E6778;
+    $color-GreyBlue: #939CAD;
+    $color-LightGreyBlue: #E5EFFA;
+    $color-Snow: #F7FAFD;
+    $color-White: white;
+
+    $font-main: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+    margin:0;
+    background-color: #F9FAFD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+html {
+    font-size: 14px;
+}

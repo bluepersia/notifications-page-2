@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background-color: #F9FAFD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=style.css.map */
