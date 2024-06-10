@@ -1,0 +1,180 @@
+
+
+.nots
+{
+    font-family: $font-main;
+    padding: 1.7em 4.2%;
+    max-width: 730px;
+
+    background-color: $color-White;
+    & p 
+    {
+        color: $color-DarkGreyBlue;
+        font-weight: 500;
+    }
+
+    &__top 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title
+    {
+        display: flex;
+        align-items: center;
+        font-size: 1.42rem;
+    }
+
+    &__counter 
+    {
+        font-weight: 800;
+        color:$color-White;
+        background-color: $color-Blue;
+        font-size: 16px;
+        padding:.25em .68em;
+        border-radius: 6px;
+        margin-left: .56em;
+    }
+
+    &__mark
+    {
+        color: $color-DarkGreyBlue;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 300ms;
+
+        &:hover
+        {
+            color: $color-VeryDarkGreyBlue;
+        }
+    }
+
+    &__list 
+    {
+        display: flex;
+        flex-direction: column;
+        gap: .71em;
+        list-style: none;
+        padding-left: 0;
+    }
+}
+
+
+.not 
+{
+    display: flex;
+    align-items: start;
+    width: 100%;
+    padding:1.14em;
+
+    &--new 
+    {
+        background-color: $color-Snow;
+
+       & .not__text::after
+       {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: $color-Red;
+            position: absolute;
+            border-radius: 50%;
+            transform: translate(75%, 75%);
+
+       }
+    }
+
+    &__img-avatar
+     {
+        width: 39px;
+        height: 39px;
+        margin-right: .92em;
+     }
+
+     &__name
+      {
+        font-weight: 800;
+        color: $color-VeryDarkGreyBlue;
+        margin-right: .42em;
+        cursor: pointer;
+        transition: color 300ms;
+
+        &:hover
+         {
+            color: $color-Blue;
+         }
+      }
+
+     &__text 
+     {
+        margin-top: 0;
+        margin-bottom: .21em;
+        position: relative;
+        & .post 
+        {
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 300ms;
+
+            &:hover {
+                color: $color-Blue;
+            }
+        }
+
+        & .group 
+        {
+            font-weight: bold;
+            color:$color-Blue;
+            cursor: pointer;
+        }
+     }
+
+     &__time 
+     {
+        margin-bottom: 0;
+        margin-top: 0;
+        color: $color-GreyBlue;
+     }
+
+     &__img
+      {
+        display: block;
+        margin-left: auto;
+        width: 45px;
+        height: 45px;
+      }
+    
+      &__msg {
+       box-shadow: inset 0px 0px 1px $color-VeryLightGreyBlue;
+       padding:1.21em 1.42em;
+       font-size: 16px;
+        transition: background-color 300ms;
+        cursor: pointer;
+       &:hover
+       {
+        background-color: $color-LightGreyBlue;
+       }
+      }
+}
+
+
+
+@media (min-width:768px)
+{
+    .not 
+    {
+        &__img, &__img-avatar
+        {
+            width: 45px;
+            height: 45px;
+        }
+
+    
+    }
+}
+
+
+

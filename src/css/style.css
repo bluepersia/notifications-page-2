@@ -11,4 +11,139 @@ html {
   font-size: 14px;
 }
 
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  body {
+    padding: 3.93em 0;
+  }
+}
+.nots {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 1.7em 4.2%;
+  max-width: 730px;
+  background-color: white;
+}
+.nots p {
+  color: #5E6778;
+  font-weight: 500;
+}
+.nots__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nots__title {
+  display: flex;
+  align-items: center;
+  font-size: 1.42rem;
+}
+.nots__counter {
+  font-weight: 800;
+  color: white;
+  background-color: #0A327B;
+  font-size: 16px;
+  padding: 0.25em 0.68em;
+  border-radius: 6px;
+  margin-left: 0.56em;
+}
+.nots__mark {
+  color: #5E6778;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 300ms;
+}
+.nots__mark:hover {
+  color: #1C202B;
+}
+.nots__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.71em;
+  list-style: none;
+  padding-left: 0;
+}
+
+.not {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  padding: 1.14em;
+}
+.not--new {
+  background-color: #F7FAFD;
+}
+.not--new .not__text::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #F65552;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(75%, 75%);
+}
+.not__img-avatar {
+  width: 39px;
+  height: 39px;
+  margin-right: 0.92em;
+}
+.not__name {
+  font-weight: 800;
+  color: #1C202B;
+  margin-right: 0.42em;
+  cursor: pointer;
+  transition: color 300ms;
+}
+.not__name:hover {
+  color: #0A327B;
+}
+.not__text {
+  margin-top: 0;
+  margin-bottom: 0.21em;
+  position: relative;
+}
+.not__text .post {
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 300ms;
+}
+.not__text .post:hover {
+  color: #0A327B;
+}
+.not__text .group {
+  font-weight: bold;
+  color: #0A327B;
+  cursor: pointer;
+}
+.not__time {
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #939CAD;
+}
+.not__img {
+  display: block;
+  margin-left: auto;
+  width: 45px;
+  height: 45px;
+}
+.not__msg {
+  box-shadow: inset 0px 0px 1px #DDE7EE;
+  padding: 1.21em 1.42em;
+  font-size: 16px;
+  transition: background-color 300ms;
+  cursor: pointer;
+}
+.not__msg:hover {
+  background-color: #E5EFFA;
+}
+
+@media (min-width: 768px) {
+  .not__img, .not__img-avatar {
+    width: 45px;
+    height: 45px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
