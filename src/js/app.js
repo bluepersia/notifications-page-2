@@ -102,27 +102,27 @@ function getTime (time)
                 type = ' hour';
                  diff /= 60;
 
-                 if (diff > 1)
-                    type += 's';
+                 
 
                 if (diff >= 24)
                 {
-                    type == ' day';
+                    type = ' day';
                      diff /= 24;
 
-                     if (diff > 1)
-                        type += 's';
+                     
 
                      if (diff >= 7)
                     {
-                        type == ' week';
+                        type = ' week';
                         diff /= 7;
 
                         if (diff > 1)
                             type += 's';
-                    } 
+                    } else if (diff > 1)
+                        type += 's';
 
-                }
+                } else if (diff > 1)
+                    type += 's';
             } 
         }
     }
@@ -145,7 +145,7 @@ function render ()
             <img src='./assets/images/${not.user.img}' alt='${not.user.name}' class='not__img-avatar'/>
             <div class='not__main'>
                 <p class='not__text'><span class='not__name'>${not.user.name}</span>${not.text.replace ('<group>', `<span class='group'>`).replace ('</group>', '</span>').replace ('<post>', `<span class='post'>`).replace ('</post>', '</span>')}</p>
-                <p class='not__time'>${getTime (not.time)}</p>
+                <p class='not__time'>${getTime (not.time)} ago</p>
                 ${not.msg ? `<p class='not__msg'>${not.msg}</p>` : ''}
             </div>
             ${not.img ? `<img src='./assets/images/${not.img}' alt='Notification image' class='not__img'/>` : ''}
