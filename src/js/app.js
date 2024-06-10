@@ -5,7 +5,8 @@ const nots = [
             name:'Mark Webber',
             img: 'avatar-mark-webber.webp'
         },
-        text: 'reacted to your recent post <post>My first tournament today!</post>',
+        type: 'post-react',
+        post: 'My first tournament today!',
         time: new Date (Date.now() - (1 * 60 * 1000)),
         new:true
     },
@@ -14,7 +15,7 @@ const nots = [
             name: 'Angela Gray',
             img: 'avatar-angela-gray.webp'
         },
-        text: 'followed you',
+        type: 'follow',
         time: new Date (Date.now () - (5 * 60 * 1000)),
         new:true
     },
@@ -23,7 +24,8 @@ const nots = [
             name: 'Jacob Thompson',
             img: 'avatar-jacob-thompson.webp'
         },
-        text: 'has joined your group <group>Chess Club</group>',
+        type: 'group-join',
+        group: 'Chess Club',
         time: new Date (Date.now() - (1 * 24 * 60 * 60 * 1000)),
         new:true
     },
@@ -32,7 +34,7 @@ const nots = [
             name: 'Rizky Hasanuddin',
             img: 'avatar-rizky-hasanuddin.webp'
         },
-        text: 'sent you a private message',
+        type: 'msg',
         msg: 'Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game.',
         time: new Date (Date.now() - (5 * 24 * 60 * 60 * 1000)),
         new:false
@@ -42,7 +44,7 @@ const nots = [
             name: 'Kimberly Smith',
             img: 'avatar-kimberly-smith.webp'
         },
-        text: 'commented on your picture',
+        type: 'picture-comment',
         img: 'image-chess.webp',
         time: new Date (Date.now () - (1 * 7 * 24 * 60 * 60 * 1000)),
         new:false
@@ -52,7 +54,8 @@ const nots = [
             name: 'Nathan Peterson',
             img: 'avatar-nathan-peterson.webp'
         },
-        text: 'reacted to your recent post <post>5 end-game strategies to increase your win rate</post>',
+        type: 'post-react',
+        post: '5 end-game strategies to increase your win rate',
         time: new Date (Date.now () - (2 * 7 * 24 * 60 * 60 * 1000)),
         new:false,
     },
@@ -61,7 +64,8 @@ const nots = [
             name: 'Anna Kim',
             img: 'avatar-anna-kim.webp'
         },
-        text: 'left the group <group>Chess Club</group>',
+        type: 'group-left',
+        group: 'Chess Club',
         time: new Date (Date.now() - (2 * 7 * 24 * 60 * 60 * 1000))
     }
 ];
@@ -130,6 +134,32 @@ function getTime (time)
     return `${diff.toFixed(0)}${type}`;
 }
 
+function getText (not)
+{
+    switch (not.type)
+    {
+        case 'post-react':
+            return `reacted to your recent post <span class='post'>${not.post}</post>`
+            
+        case "follow":
+            return 'followed you'
+           
+        case "group-join":
+        return `has joined your group <span class='group'>${not.group}</span>`
+      
+        case "msg":
+        return `sent you a private message`;
+
+        case "picture-comment":
+        return 'commented on your picture';
+
+        case 'group-left':
+        return `left the group <span class='group'>${not.group}</span>`
+    }
+
+    return '';
+}
+
 function render () 
 {
     const newCount = countNew ();
@@ -144,7 +174,7 @@ function render ()
         <div class='not ${not.new && 'not--new'}'>
             <img src='./assets/images/${not.user.img}' alt='${not.user.name}' class='not__img-avatar'/>
             <div class='not__main'>
-                <p class='not__text'><span class='not__name'>${not.user.name}</span>${not.text.replace ('<group>', `<span class='group'>`).replace ('</group>', '</span>').replace ('<post>', `<span class='post'>`).replace ('</post>', '</span>')}</p>
+                <p class='not__text'><span class='not__name'>${not.user.name}</span>${getText (not)}</p>
                 <p class='not__time'>${getTime (not.time)} ago</p>
                 ${not.msg ? `<p class='not__msg'>${not.msg}</p>` : ''}
             </div>
